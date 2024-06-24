@@ -1,5 +1,5 @@
 """
-URL configuration for mft project.
+URL configuration for meeting_planner project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,8 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from website.views import welcome, about
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", include("pages.urls"))
+    path("", welcome, name = "welcome"),
+    path("about", about),
+    path("meetings/", include('meetings.urls')),
+    path("auth/", include('django.contrib.auth.urls'))
 ]
