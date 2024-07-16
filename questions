@@ -1,0 +1,90 @@
+A coding competition organized to hire software developers includes an interesting problem on Bitwise-OR. The goodness of a sequence is defined as the bitwise-OR of its elements. Given an array arr of length n, find all possible distinct values of
+goodness that can be obtained by choosing any strictly increasing subsequence of the array. Sort the return array in non-decreasing order.
+Note: A subsequence is a sequence that can be derived from the given sequence by deleting zero or more elements without changing the order of the remaining elements.
+Example
+Consider n= 4, arr = [4, 2, 4, 1].
+The strictly increasing subsequences which can be chosen to have distinct goodness values are:
+• Empty subsequence; goodness = 0
+[1]; goodness = 1
+[2]; goodness = 2
+[4]; goodness = 4
+[2,4]; goodness = 6
+
+There are no other strictly increasing subsequences that yield a different goodness value. So, the answer is [0, 1, 2, 4, 6], which is sorted in non- decreasing order.
+penn.edu
+Function Description
+Complete the function getDistinctGoodness Values in the editor below.
+getDistinctGoodness Values has the following parameter:
+int arr[n]: an array of integers
+Returns
+int[]: all possible distinct values of goodness
+
+1<=n<=10^4
+1<= arr[i] < 1024
+
+Question:
+
+The developers working on a social media network app want to analyze user behavior. There are n event logs where userEvent[i] denotes the userId for the user that triggered the ith event. The team wants to analyze the subarrays of the logs which are consistent, that is, the frequency of the most frequent user in the subarray is equal to the frequency of the least frequent user in the whole array. Find the maximum length of consistent logs.
+
+Example
+Given n = 10, and userEvent = [1,2,1,3,4,2,4,3,3,4]
+- The frequencies of 1 and 2 are 2
+- The frequencies of 3 and 4 are 3
+The minimum frequency in the array is 2.
+The longest valid subarray has 8 elements: [1,2,1,3,4,2,4,3].
+The frequency of the most common element in the subarray is 2, the same as the minimum frequency in the entire array. Hence, the maximum length of the consistent logs is 8.
+
+Function description
+Complete the function findConsistentLogs.
+Following Parameters
+int userEvent[n]: the userids present in the event logs
+Returns
+int: the maximum length of the consistent logs
+
+Can anyone solve this and tell me what is the exact approach?
+
+There are n jobs that can be executed in parallel on a processor, where the execution time of the i ^ (th) job onfidential is executionTime[i]. To speed up execution, the following strategy is used.
+
+In one operation, a job is chosen, the major job, and is executed for x seconds. All other jobs are executed for y seconds where y < x
+
+A job is complete when it has been executed for at least executionTime[i] seconds, then it exits the pool. Find the minimum number of operations in which the processor can completely execute all the jobs if run optimally.
+
+Example
+
+Consider n = 5 executionTime = [3, 4, 1, 7, 6] , x = 4 and y = 2
+
+The following strategy is optimal using 1-based indexing.
+
+Choose job 4 as the major job and reduce the execution times of job 4 by x = 4 and of other jobs by underline y =2. Now executionTime = [1, 2, - 1, 3, 4] , Job 3 is complete, so it is removed.
+
+Choose job 4, executionTime = [-1; 01. 2]. So, jobs 1.2 and 4 are now complete.
+
+Choose job 5, executionTime = [-2]. Job 5 is complete.
+It takes 3 operations to execute all the jobs so the answer is 3.
+
+Sample Input: executionTime=[3,3,6,3,9] n=5 x=3 y=2.
+Sample output: 3
+
+
+
+Can anyone solve this and tell me what is the exact approach? Maybe I misunderstood the question. I used segment tree but couldn't pass all testcases.
+
+In an organization, there are n servers, each with a capacity of capacity[i]. A contiguous subsegment [l, r] of servers is said to be stable if capacity[l] = capacity[r] = sum[l+1, r-1]. In other words, the capacity of the servers at the endpoints of the segment should be equal to the sum of the capacities of all the interior servers.
+
+Find the number of stable sub-segments of length 3 or more.
+
+Example
+
+For example, n=5 and capacity=[9, 3, 3, 3, 9].
+
+Segment ||| First & Last Capacity ||| Interiro Capacity Sum ||| Balanced
+[9,3,3] 9 6 No
+[3,3,3] 3 3 Yes
+[3,3,9] 3 3 No
+[9,3,3,3] 9 6 No
+[3,3,3,9] 3 9 No
+[9,3,3,3,9] 9 9 Yes
+
+There are 2 stable subsegments: [3, 3, 3] and [9, 3, 3, 3, 9]. Return 2.
+sample input : n=7 capacity = [9,3,1,2,3,9,10]
+sample output : 2
