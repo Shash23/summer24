@@ -35,3 +35,8 @@ def reverseWords(s):
     return result
         
 print(reverseWords("the sky is blue"))
+
+'''
+    def reverseWords(self, s: str) -> str:
+        return " ".join(reversed(s.split()))
+'''
