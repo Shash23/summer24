@@ -1,0 +1,79 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A0A2A; /* Dark navy blue */
+    color: white;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.icons a {
+    color: white;
+    font-size: 2em;
+    transition: transform 0.3s;
+}
+.icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Specific Merriweather font styles */
+.merriweather-light {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+}
+
+.merriweather-regular {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+}
+
+.merriweather-bold {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+}
+
+.merriweather-black {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+}
+
+.merriweather-light-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.merriweather-regular-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.merriweather-bold-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.merriweather-black-italic {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: italic;
+}
