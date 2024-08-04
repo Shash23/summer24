@@ -31,7 +31,7 @@ h1 {
 }
 .icons a {
     color: white;
-    font-size: 2em;
+    font-size: 3em;
     transition: transform 0.3s;
 }
 .icons a:hover {
