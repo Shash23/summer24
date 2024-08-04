@@ -1,45 +1,30 @@
-from typing import List
+class Solution:
 
-def twoSum(nums: List[int], target: int) -> List[int]:
-    hashmap = {}
-    for i, num in enumerate(nums):
-        complement = target - num
-        if complement in hashmap:
-            return [hashmap[complement], i]
-        hashmap[num] = i
-    return []
+    def twoSum(nums: List[int], target:int) -> List[int]:
 
-def threeSum(nums: List[int]) -> List[List[int]]:
+        hash_map = {}
 
-        # take out a number and look in the array,
-        # if there are two numbers that add up to that number but negative then that is valid
+        for i in range(len(nums)):
+            temp = target - nums[i]
+            if temp in hash_map:
+                return [nums[i], temp]
 
-        # remember think about duplicate
-        
-        answer = []
-        
-        for i in nums:
-            
-            new_list = [element for element in nums if element != i]
-            
-            target = i * -1
-            
-            # check implementation
-            result = twoSum(new_list, target)
-            
-            if(result != []):
-                
-                # order the elements
-                temp = sorted([i, result[0], result[1]])
-                
-                if(temp not in answer):
-                    
-                    answer.append(temp)
-                
-        return answer        
-            
-nums = [0,1,1]
-print(threeSum(nums))
+            hash_map[temp] = i
 
-nums = [0,0,0]
-print(threeSum(nums))
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+
+        target = 0
+        result = []
+
+        hash_map = {}
+        curr = []
+        curr.add
+
+        for i in range(len(nums)):
+
+            temp = target - nums[i]
+            
+            if temp in hash_map:
+                return [i, hash_map[temp]]
+
+            hash_map[nums[i]] = i
