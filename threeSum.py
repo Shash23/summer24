@@ -17,8 +17,8 @@ class Solution:
         result = []
 
         hash_map = {}
-        curr = []
-        curr.add
+        nums.sort()
+        
 
         for i in range(len(nums)):
 
