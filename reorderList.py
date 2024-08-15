@@ -1,78 +1,45 @@
-from typing import List, Optional
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
 
-class ListNode:
-    
-    def __init__(self, val=0, next=None):
-        self.val = val
-        self.next = next
+    def reorderList(self, head: Optional[ListNode]) -> None:
+        """
+        Do not return anything, modify head in-place instead.
+        """
 
-def reorderList(head: Optional[ListNode]) -> None:
-    
-    """
-    Do not return anything, modify head in-place instead.
-    """
+        fast_ptr = head
+        slow_ptr = head
 
-    # find the middle node of the list
+        while fast_ptr and fast_ptr.next:
 
-    slow_ptr = head
+            slow_ptr = slow_ptr.next
+            fast_ptr = fast_ptr.next.next
 
-    #fast ptr
-    fast_ptr = head
-
-    while fast_ptr and fast_ptr.next:
-
-        slow_ptr = slow_ptr.next
-        fast_ptr = fast_ptr.next.next
-
-    print(slow_ptr.val)
-    
-    
-    #wurks
-    
-    # reverse the list from the slow_ptr to the fast_ptr
-    
-    prev, curr = None, slow_ptr
-    
-    while curr:
-        curr.next, prev, curr = prev, curr, curr.next
+        # slow ptr will give way for the half way point
         
-    #prev is now the head of the list
-    
-    print_list(head)
+        prev, curr = None, slow_ptr
+
+        while curr:
+
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
         
-def print_list(node):
-    while node:
-        print(node.val, end=" -> ")
-        node = node.next
-    print("None")
+        # up til here is good
+        first, second = head, prev
 
-        
-def listToLinkedList(arr: List[int]) -> Optional[ListNode]:
-    
-    if not arr:
-        return None
-    
-    head = ListNode(arr[0])
-    
-    current = head
-    
-    for value in arr[1:]:
-        current.next = ListNode(value)
-        current = current.next
-    
-    return head
-        
+        while second.next:
+            
+            temp1 = first.next
+            temp2 = second.next
+            
+            first.next = second
+            second.next = temp1
 
-test_cases = [
-    [1, 2, 3, 4],
-    [1, 2, 3, 4, 5]
-]
+            first, second = temp1, temp2
 
-test_case  = [1, 2, 3, 4, 5]
-
-head = listToLinkedList(test_case)
-print(reorderList(head))
-
-
-
-
+        return head
