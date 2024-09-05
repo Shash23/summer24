@@ -1,3 +1,6 @@
+from collections import Counter
+from collections import heapq
+
 class Solution:
     def reorganizeString(self, s: str) -> str:
         ans = []
@@ -20,3 +23,8 @@ class Solution:
                 heappush(pq, (count_first, char_first))
 
         return ''.join(ans)
+    
+    
+sol = Solution()
+
+print(sol.reorganizeString("aab"))
